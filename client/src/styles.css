@@ -1,45 +1,192 @@
-:root{
-  --bg:#f6fbff;
-  --card:#ffffff;
-  --accent:#0ea5a4;
-  --muted:#6b7280;
-  --shadow: 0 6px 20px rgba(15,23,42,0.06);
+/* ===== THM-University Theme ===== */
+:root {
+  /* THM greens and neutrals */
+  --bg: #f4f7f4;              /* soft paper-white */
+  --card: #ffffff;
+  --accent: #4c9a2a;          /* THM green */
+  --accent-dark: #3d7b20;
+  --muted: #5f6b63;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  --gradient: linear-gradient(135deg, #4c9a2a 0%, #69b83c 100%);
 }
 
-*{box-sizing:border-box;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+* {
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#0f172a;}
-.page{min-height:100vh;display:flex;flex-direction:column;}
-.topbar{padding:28px 36px;border-bottom:1px solid #eef2f7;background:transparent;}
-.title{font-size:20px;font-weight:700;}
-.subtitle{font-size:13px;color:var(--muted);margin-top:6px;}
-.container{display:flex;gap:20px;padding:28px 36px;align-items:flex-start;max-width:1100px;margin:0 auto;width:100%;}
-.left{flex:1;}
-.right{width:360px;}
-.card{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
-.card.small{padding:14px;}
-.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
-h3,h4{margin:0;font-size:16px;}
-.btn{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;border:none;cursor:pointer;margin-left:8px;}
-.btn.ghost{background:#f8fafb;color:var(--muted);border:1px solid #e6eef0;}
-.upload-area{border:2px dashed #e6eef0;padding:18px;border-radius:12px;text-align:center;margin-bottom:12px;}
-.upload-btn{display:inline-block;background:#eef9f8;padding:8px 12px;border-radius:8px;color:var(--accent);cursor:pointer;margin-top:8px;}
-.upload-btn input{display:none;}
-.muted{color:var(--muted);font-size:13px;margin-top:6px;}
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, #fff 100%);
+  color: #0f172a;
+}
 
-.filelist{max-height:360px;overflow:auto;padding-top:8px;}
-.file-item{display:flex;justify-content:space-between;padding:10px;border-radius:8px;cursor:pointer;}
-.file-item:hover{background:#fbfdff;}
-.file-item.selected{background:linear-gradient(90deg,#ecfeff,#f0f9ff);border:1px solid #cff7f6;}
-.file-name{font-weight:600;}
-.file-meta{font-size:13px;color:var(--muted);}
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-.big{font-weight:700;margin-top:8px;}
-.progress{margin-top:14px;}
-.bar{background:#f1f5f9;border-radius:8px;height:10px;overflow:hidden;}
-.fill{background:linear-gradient(90deg,#06b6d4,#0891b2);height:100%;width:0%;}
-.times{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:8px;}
-.status{margin-top:12px;font-size:13px;color:var(--muted);}
+.topbar {
+  padding: 28px 36px;
+  border-bottom: 2px solid #e6ede6;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
 
-.footer, .foot{text-align:center;padding:18px 0;color:var(--muted);margin-top:auto;}
-.muted-note ul{padding-left:18px;margin:6px 0;}
+.title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent-dark);
+  letter-spacing: 0.5px;
+}
+.subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.container {
+  display: flex;
+  gap: 24px;
+  padding: 32px 36px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.left { flex: 1; }
+.right { width: 380px; }
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 18px;
+  border: 1px solid #e6ede6;
+}
+.card.small { padding: 16px; }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+h3, h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.btn:hover { background: var(--accent-dark); }
+
+.btn.ghost {
+  background: #f8faf8;
+  color: var(--muted);
+  border: 1px solid #dce5dc;
+}
+.btn.ghost:hover {
+  background: #eef3ee;
+}
+
+.upload-area {
+  border: 2px dashed #c7d5c7;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 14px;
+  background: #f9fbf9;
+}
+
+.upload-btn {
+  display: inline-block;
+  background: var(--gradient);
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.upload-btn input { display: none; }
+
+.muted { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+.filelist {
+  max-height: 360px;
+  overflow: auto;
+  padding-top: 8px;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.file-item:hover { background: #f2f8f2; }
+.file-item.selected {
+  background: linear-gradient(90deg, #e5f5e0, #f0faf0);
+  border: 1px solid #bfe2bf;
+}
+
+.file-name { font-weight: 600; color: #2f3e2f; }
+.file-meta { font-size: 13px; color: var(--muted); }
+
+.big { font-weight: 700; margin-top: 8px; }
+
+.progress { margin-top: 14px; }
+.bar {
+  background: #e4ebe4;
+  border-radius: 8px;
+  height: 10px;
+  overflow: hidden;
+}
+.fill {
+  background: var(--gradient);
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s linear;
+}
+
+.times {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.status {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer, .foot {
+  text-align: center;
+  padding: 20px 0;
+  color: var(--muted);
+  margin-top: auto;
+  border-top: 1px solid #e6ede6;
+  font-size: 13px;
+}
+
